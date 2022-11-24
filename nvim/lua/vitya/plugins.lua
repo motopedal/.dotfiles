@@ -38,9 +38,9 @@ packer.startup(function(use)
   use("folke/tokyonight.nvim")					-- Theme
   
 	-- Visualizers
---  use("windwp/nvim-autopairs")					-- 
---  use("windwp/nvim-ts-autotag")					--
---  use("norcalli/nvim-colorizer.lua")		--
+  use("windwp/nvim-autopairs")					-- 
+  use("windwp/nvim-ts-autotag")					--
+  use("norcalli/nvim-colorizer.lua")				--
 
 	-- Treesitter
   use("nvim-treesitter/nvim-treesitter", {
