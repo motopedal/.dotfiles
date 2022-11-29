@@ -47,8 +47,9 @@ packer.startup(function(use)
     run = ":TSUpdate"										-- 
   })
   use("romgrk/nvim-treesitter-context")	--
-
+		
+  use("prettier/vim-prettier")
 	-- Git
-  use 'lewis6991/gitsigns.nvim'
-  use 'dinhhuy258/git.nvim' 	 
+  use('lewis6991/gitsigns.nvim')
+  use('dinhhuy258/git.nvim') 
 end)
