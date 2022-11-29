@@ -34,7 +34,10 @@ inoremap("<C-c>", "<Esc>")
 nnoremap("<leader>pv", ":Ex<CR>")
 nnoremap("<leader>u", ":UndotreeShow<CR>")
 
+nnoremap("gp", ":silent %!npx prettier --stdin-filepath %<CR>")
+
 -- Format file
 nnoremap("<leader>f", function()
     vim.lsp.buf.format()
+    vim.cmd(":exe 'normal gp'")
 end)
