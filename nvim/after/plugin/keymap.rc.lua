@@ -30,6 +30,10 @@ nnoremap("<C-w><down>", "<C-w>-")
 -- Escape faster
 inoremap("<C-c>", "<Esc>")
 
+-- Jumping around
+inoremap("<C-u>", "<C-u>zz")
+inoremap("<C-d>", "<C-d>zz")
+
 -- File manager
 nnoremap("<leader>pv", ":Ex<CR>")
 nnoremap("<leader>u", ":UndotreeShow<CR>")
