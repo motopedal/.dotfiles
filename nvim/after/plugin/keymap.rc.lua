@@ -36,8 +36,18 @@ nnoremap("<leader>u", ":UndotreeShow<CR>")
 
 nnoremap("gp", ":silent %!npx prettier --stdin-filepath %<CR>")
 
+local function organize_imports()
+  local params = {
+    command = "_typescript.organizeImports",
+    arguments = {vim.api.nvim_buf_get_name(0)},
+    title = ""
+  }
+  vim.lsp.buf.execute_command(params)
+end
+
 -- Format file
 nnoremap("<leader>f", function()
-    vim.lsp.buf.format()
+    -- vim.lsp.buf.format()
+    organize_imports()
     vim.cmd(":exe 'normal gp'")
 end)
