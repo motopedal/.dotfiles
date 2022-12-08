@@ -31,8 +31,8 @@ nnoremap("<C-w><down>", "<C-w>-")
 inoremap("<C-c>", "<Esc>")
 
 -- Jumping around
-inoremap("<C-u>", "<C-u>zz")
-inoremap("<C-d>", "<C-d>zz")
+nnoremap("<C-u>", "<C-u>zz")
+nnoremap("<C-d>", "<C-d>zz")
 
 -- File manager
 nnoremap("<leader>pv", ":Ex<CR>")
