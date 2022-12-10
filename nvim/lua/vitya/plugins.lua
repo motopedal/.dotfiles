@@ -17,8 +17,8 @@ packer.startup(function(use)
 
   -- Status Line
   use("nvim-lualine/lualine.nvim")      -- statusline config
-	
-  -- LSP
+
+	-- LSP
   use("neovim/nvim-lspconfig")
   use("hrsh7th/cmp-nvim-lsp") 		-- nvim-cmp source for neovim's built-in LSP
   use("hrsh7th/cmp-buffer")		-- nvim-cmp source for buffer words
@@ -29,32 +29,31 @@ packer.startup(function(use)
   use("saadparwaiz1/cmp_luasnip")	-- autocompletion for lua
   use("L3MON4D3/LuaSnip")		-- lua snippets
   use("nvim-lua/lsp_extensions.nvim") 	-- inlay hints for rust
-  
-  
-  -- Colors
+
+	-- Colors
   use({
   'rose-pine/neovim', as = 'rose-pine'  -- Theme
   })
   use("folke/tokyonight.nvim")					-- Theme
-  
+
   -- Visualizers
-  use("windwp/nvim-autopairs")					-- 
+  use("windwp/nvim-autopairs")					--
   use("windwp/nvim-ts-autotag")					--
   use("norcalli/nvim-colorizer.lua")				--
 
   -- Treesitter
   use("nvim-treesitter/nvim-treesitter", {
-    run = ":TSUpdate"										-- 
+    run = ":TSUpdate"										--
   })
   use("romgrk/nvim-treesitter-context")	--
-		
+
   use("prettier/vim-prettier")
-		
+
   -- Comments
   use("numToStr/Comment.nvim")
   use("JoosepAlviste/nvim-ts-context-commentstring")
-		
+
   -- Git
   use('lewis6991/gitsigns.nvim')
-  use('dinhhuy258/git.nvim') 
+  use('dinhhuy258/git.nvim')
 end)

@@ -42,4 +42,6 @@ vim.opt.undofile = true
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
 vim.opt.cmdheight = 1
+vim.opt.re = 0
+vim.opt.syntax = "off"
 vim.opt.isfname:append("@-@")
