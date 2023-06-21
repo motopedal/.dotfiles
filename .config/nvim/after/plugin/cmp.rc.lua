@@ -65,7 +65,19 @@ local function config(_config)
 	}, _config or {})
 end
 
-require("lspconfig").tsserver.setup(config())
+require("lspconfig").tsserver.setup(config(
+  {
+    single_file_support = false,
+    root_dir = function(fname)
+      return require("lspconfig.util").root_pattern ".git" (fname)
+          or require("lspconfig.util").root_pattern "tsconfig.json" (fname)
+          or require("lspconfig.util").root_pattern(
+            "package.json",
+            "jsconfig.json"
+          )(fname)
+    end,
+  }
+))
 
 
 local opts = {
