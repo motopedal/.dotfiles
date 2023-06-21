@@ -1,4 +1,5 @@
-# *
-#
-# !.config/nvim
-# !.zshrc
+*
+
+!.config/nvim
+!fonts/
+!.zshrc
