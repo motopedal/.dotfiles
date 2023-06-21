@@ -14,7 +14,15 @@ packer.startup(function(use)
   use("nvim-lua/plenary.nvim")
   use("nvim-lua/popup.nvim")
   use("nvim-telescope/telescope.nvim")
+  use("nvim-pack/nvim-spectre")
 
+  -- File explorer
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional
+    },
+  }
   -- Status Line
   use("nvim-lualine/lualine.nvim")      -- statusline config
 
@@ -55,5 +63,7 @@ packer.startup(function(use)
 
   -- Git
   use('lewis6991/gitsigns.nvim')
+  use('APZelos/blamer.nvim')
   use('dinhhuy258/git.nvim')
+
 end)

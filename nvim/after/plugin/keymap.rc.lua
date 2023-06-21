@@ -35,7 +35,9 @@ nnoremap("<C-u>", "<C-u>zz")
 nnoremap("<C-d>", "<C-d>zz")
 
 -- File manager
-nnoremap("<leader>pv", ":Ex<CR>")
+nnoremap("<leader>pv", ":NvimTreeToggle<CR>")
+nnoremap("<leader>r", ":Spectre<CR>")
+nnoremap("<leader>pf", ":NvimTreeFindFile<CR>")
 nnoremap("<leader>u", ":UndotreeShow<CR>")
 
 nnoremap("gp", ":silent %!npx prettier --stdin-filepath %<CR>")

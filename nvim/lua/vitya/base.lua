@@ -8,6 +8,8 @@ vim.wo.number = true
 
 vim.opt.title = true
 vim.opt.autoindent = true
+vim.g.blamer_enabled = true
+
 vim.opt.smartindent = true
 vim.opt.hlsearch = true
 vim.opt.backup = false
