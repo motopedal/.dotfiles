@@ -1,5 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=~/.npm-global/bin:$PATH
+export ANDROID_HOME=~/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -100,14 +103,25 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-alias vim="nvim"
-alias dc="docker compose"
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+alias kickstart='source /home/viktor/.kickstart_aliases/kickstart.sh'
+alias docker-drush='source /home/viktor/.kickstart_aliases/docker-drush.sh'
+alias dd='docker-drush'
+alias dep='docker-compose exec php'
+alias dup='source /home/viktor/.kickstart_aliases/dup.sh'
+alias dcs='docker-compose stop'
+alias dcp='dd config-pull @dev.site @self'
+alias dsql='source /home/viktor/.kickstart_aliases/dsql.sh'
+alias drsync='source /home/viktor/.kickstart_aliases/drsync.sh'
+alias dlog='docker-compose logs --tail=10 --follow $@'
+alias phpcs='docker-compose exec php bin/phpcs -p --colors --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml --ignore="public_html/themes/custom/*/node_modules,public_html/themes/custom/*.css"'
+alias make-component='source /home/viktor/.kickstart_aliases/make-component.sh'
+alias typo3cms='docker-compose exec php vendor/bin/typo3cms'
+alias typo3cr='docker-compose exec php vendor/bin/typo3cms cache:flush'
+alias typo3updb='docker-compose exec php vendor/bin/typo3cms database:updateschema'
+alias typo3dsql='source /home/viktor/.kickstart_aliases/typo3dsql.sh'
+alias typo3drsync='source /home/viktor/.kickstart_aliases/typo3drsync.sh'
+alias ssh-connect='source /home/viktor/.kickstart_aliases/ssh-connect.sh'
+alias docker-compose='docker compose'
