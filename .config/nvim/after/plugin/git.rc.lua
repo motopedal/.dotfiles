@@ -7,5 +7,6 @@ git.setup({
     blame = "<leader>gb",
     -- Open file/folder in git repository
     browse = "<leader>go",
-  }
+  },
+  private_gitlabs = { "https://gitlab.studiopresent.com/" },
 })

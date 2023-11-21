@@ -106,6 +106,9 @@ source $ZSH/oh-my-zsh.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export VIM='/usr/bin/nvim'
+export VIMRUNTIME='/usr/share/nvim/runtime'
+export MOZ_ENABLE_WAYLAND=1
 alias kickstart='source /home/viktor/.kickstart_aliases/kickstart.sh'
 alias docker-drush='source /home/viktor/.kickstart_aliases/docker-drush.sh'
 alias dd='docker-drush'
@@ -124,6 +127,6 @@ alias typo3updb='docker-compose exec php vendor/bin/typo3cms database:updatesche
 alias typo3dsql='source /home/viktor/.kickstart_aliases/typo3dsql.sh'
 alias typo3drsync='source /home/viktor/.kickstart_aliases/typo3drsync.sh'
 alias ssh-connect='source /home/viktor/.kickstart_aliases/ssh-connect.sh'
-alias docker-compose='docker compose'
-export VIM='/usr/bin/nvim'
-export VIMRUNTIME='/usr/share/nvim/runtime'
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+source /home/viktor/projects/kickstart/autocomplete.sh
