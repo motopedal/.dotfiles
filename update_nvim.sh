@@ -15,3 +15,5 @@ sudo mv $FOLDER_NAME/share/nvim /usr/share
 
 
 rm -rf $FOLDER_NAME
+
+sudo apt-get install xclip
