@@ -1,5 +1,7 @@
 vim.cmd("autocmd!")
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
@@ -47,5 +49,7 @@ vim.opt.cmdheight = 1
 vim.opt.re = 0
 vim.opt.syntax = "off"
 vim.opt.isfname:append("@-@")
+vim.g.neoformat_try_node_exe = 1
 
 vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
+vim.loader.enable()
