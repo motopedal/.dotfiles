@@ -13,7 +13,12 @@ telescope.setup {
       },
     },
   },
-  file_ignore_patterns = {"**/node_modules/**", "**/.git/**", "**/k8s/**", "assets"}
+  file_ignore_patterns = {"**/node_modules/**", "**/.git/**", "**/k8s/**", "assets"},
+  -- pickers = {
+  --   find_files = {
+  --     find_command = {"rg", "--files", "--sortr=modified"}
+  --   }
+  -- }
 }
 
 nnoremap(';f',
@@ -21,13 +26,15 @@ nnoremap(';f',
     builtin.find_files()
   end)
 nnoremap(';r', function()
-  builtin.live_grep()
+  -- builtin.live_grep()
+  telescope.extensions.live_grep_args.live_grep_args()
 end)
 nnoremap('\\\\', function()
   builtin.buffers()
 end)
 nnoremap(';t', function()
-  builtin.help_tags()
+  -- vim.cmd(":exe ':Telescope frecency'")
+  vim.cmd(":exe ':Telescope smart_open'")
 end)
 nnoremap(';;', function()
   builtin.resume()

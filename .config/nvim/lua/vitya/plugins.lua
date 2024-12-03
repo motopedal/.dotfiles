@@ -29,7 +29,20 @@ packer.startup(function(use)
   use("nvim-lualine/lualine.nvim") -- Highly customizable status line, showing information about the file, mode, etc.
 
   -- Telescope - Fuzzy Finder
-  use("nvim-telescope/telescope.nvim") -- Fuzzy finder with support for finding files, searching text, and more
+  use {
+    "nvim-telescope/telescope.nvim",
+    requires = {
+      "danielfalk/smart-open.nvim",
+      "kkharji/sqlite.lua",
+      "nvim-telescope/telescope-live-grep-args.nvim",
+    },
+    config = function ()
+      local telescope = require("telescope")
+
+      telescope.load_extension("smart_open")
+      telescope.load_extension("live_grep_args")
+    end
+  } -- Fuzzy finder with support for finding files, searching text, and more
 
   -- LSP setup and Autocompletion plugins grouped together
   use('neovim/nvim-lspconfig') -- Essential LSP configurations for various programming languages
@@ -57,7 +70,6 @@ packer.startup(function(use)
 
   -- UI Enhancements
   use("windwp/nvim-autopairs") -- Automatically pairs brackets and quotes
-  use("windwp/nvim-ts-autotag") -- Auto-closes and renames HTML tags using Treesitter
   use("norcalli/nvim-colorizer.lua") -- Highlights color codes (e.g., #FFFFFF) with the actual color
   use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 
@@ -66,7 +78,13 @@ packer.startup(function(use)
   use("romgrk/nvim-treesitter-context") -- Keeps the current function/class header visible at the top while scrolling
 
   -- Code Formatting
-  use("prettier/vim-prettier") -- Integrates Prettier for auto-formatting JavaScript, CSS, and more
+  use { "prettier/vim-prettier" ,
+    config = function ()
+      vim.g['prettier#autoformat'] = 1
+      vim.g['prettier#autoformat_config_present'] = 1
+      vim.g['prettier#exec_cmd_path'] = 'prettier'
+    end
+  }-- Integrates Prettier for auto-formatting JavaScript, CSS, and more
 
   -- Commenting Utilities
   use("numToStr/Comment.nvim") -- Easily add, remove, and toggle comments in code

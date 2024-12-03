@@ -1,7 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=~/.npm-global/bin:$PATH
-export ANDROID_HOME=~/Android/Sdk
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
 
 # Path to your oh-my-zsh installation.
@@ -106,27 +107,29 @@ source $ZSH/oh-my-zsh.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export VIM='/usr/bin/nvim'
-export VIMRUNTIME='/usr/share/nvim/runtime'
+
+NVIM_PATH='/opt/homebrew/Cellar/neovim/0.10.2_1'
+
+export VIM="$NVIM_PATH/bin/nvim"
+export VIMRUNTIME="$NVIM_PATH/share/nvim/runtime"
 export MOZ_ENABLE_WAYLAND=1
-alias kickstart='source /home/viktor/.kickstart_aliases/kickstart.sh'
-alias docker-drush='source /home/viktor/.kickstart_aliases/docker-drush.sh'
-alias dd='docker-drush'
-alias dep='docker-compose exec php'
-alias dup='source /home/viktor/.kickstart_aliases/dup.sh'
-alias dcs='docker-compose stop'
-alias dcp='dd config-pull @dev.site @self'
-alias dsql='source /home/viktor/.kickstart_aliases/dsql.sh'
-alias drsync='source /home/viktor/.kickstart_aliases/drsync.sh'
-alias dlog='docker-compose logs --tail=10 --follow $@'
-alias phpcs='docker-compose exec php bin/phpcs -p --colors --standard=Drupal,DrupalPractice --extensions=php,module,inc,install,test,profile,theme,css,info,txt,md,yml --ignore="public_html/themes/custom/*/node_modules,public_html/themes/custom/*.css"'
-alias make-component='source /home/viktor/.kickstart_aliases/make-component.sh'
-alias typo3cms='docker-compose exec php vendor/bin/typo3cms'
-alias typo3cr='docker-compose exec php vendor/bin/typo3cms cache:flush'
-alias typo3updb='docker-compose exec php vendor/bin/typo3cms database:updateschema'
-alias typo3dsql='source /home/viktor/.kickstart_aliases/typo3dsql.sh'
-alias typo3drsync='source /home/viktor/.kickstart_aliases/typo3drsync.sh'
-alias ssh-connect='source /home/viktor/.kickstart_aliases/ssh-connect.sh'
+
+export OPENSSL_ROOT_DIR=/opt/homebrew/opt/openssl@3
+export OPENSSL_LIBRARIES=/opt/homebrew/opt/openssl@3/lib
+export OPENSSL_INCLUDE_DIR=/opt/homebrew/opt/openssl@3/include
+
+PATH_TO_PROJECTS="$HOME/Documents/projects"
+
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
-source /home/viktor/projects/kickstart/autocomplete.sh
+source "$PATH_TO_PROJECTS/kickstart/autocomplete.sh"
+source /Users/viktornagy/Documents/projects/kickstart/autocomplete.sh
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+export PATH="/usr/local/opt/bzip2/bin:$PATH"
+eval "$(jenv init -)"
+eval "$(jenv init -)"
+eval "$(jenv init -)"
+eval "$(jenv init -)"
+eval "$(jenv init -)"

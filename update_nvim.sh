@@ -3,7 +3,7 @@ FOLDER_NAME='nvim-macos-arm64'
 
 curl -s -L https://github.com/neovim/neovim/releases/latest/download/$FOLDER_NAME.tar.gz | tar xvz -C .
 
-sudo rm -f /usr/bin/nvim
+sudo rm -f /usr/bin/nvim || sudo mkdir /usr/bin/nvim
 sudo mv $FOLDER_NAME/bin/nvim /usr/bin/nvim
 
 sudo rm -rf /usr/lib/nvim
@@ -16,4 +16,4 @@ sudo mv $FOLDER_NAME/share/nvim /usr/share
 
 rm -rf $FOLDER_NAME
 
-sudo apt-get install xclip
+# sudo apt-get install xclip
